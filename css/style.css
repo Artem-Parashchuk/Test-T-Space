@@ -140,6 +140,7 @@ html, body {
 }
 
 .message-list {
+  
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -189,6 +190,14 @@ html, body {
   display: flex;
   margin-top: 10px;
   gap: 10px;
+  opacity: 0; 
+  transform: translateY(20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.message-answer.visible {
+  opacity: 1; 
+  transform: translateY(0); 
 }
 
 .message-answer__btn {

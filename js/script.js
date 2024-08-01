@@ -3,11 +3,38 @@ const messageAnswer = document.querySelector('div.message-answer');
 const answerYes = document.querySelector('.yes');
 const answerNo = document.querySelector('.no');
 const questionMessageList = document.querySelector('.message-list');
-
 const formContainer = document.querySelector('.form');
 if (formContainer) {
     formContainer.style.display = 'none';
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const messages = document.querySelectorAll('.message-item');
+    const btns = document.querySelector('.message-answer');
+    let delay = 0;
+
+    function scrollToBottom() {
+        questionMessageList.scrollTop = questionMessageList.scrollHeight
+      }
+
+    messages.forEach((message, index) => {
+        setTimeout(() => {
+            message.classList.add('visible');
+            // message.classList.remove('hidden');
+            scrollToBottom()
+            if (index === messages.length - 1) {
+                // Показуємо блок з кнопками після останнього повідомлення
+                setTimeout(() => {
+                    btns.classList.add('visible');
+                    // btns.classList.remove('hidden');
+                    scrollToBottom()
+                }, 600); // Додаємо затримку в 1 секунду після останнього повідомлення
+            }
+        }, delay);
+        delay += 1000; // Затримка 1 секунда між повідомленнями
+    });
+});
+
 
 function addAnswer(answerText) {
     const newAnswer = document.createElement('li');
@@ -37,7 +64,7 @@ if (answerYes) {
                  <button class="message-answer__btn" id='answer-no'>Ні</button>
                  <button class="message-answer__btn" id='answer-hear'>Чув про це</button>`
             );
-        }, 500); 
+        }, 500);
     }, { once: true });
 }
 
@@ -155,9 +182,8 @@ function questionStep(question, answers, isFinalStep = false) {
                 handleAnswerClick('5 і більше');
             }, { once: true });
         }
-    }, 100); 
+    }, 100);
 }
 
 
 
-// --------------------Form-------------------------------
