@@ -1,3 +1,8 @@
+const firstNameErrorMessage = document.querySelector('.firstName-error');
+const lastNameErrorMessage = document.querySelector('.lastName-error');
+const emailErrorMessage = document.querySelector('.email-error');
+const phoneErrorMessage = document.querySelector('.phone-error');
+
 document.addEventListener('DOMContentLoaded', () => {
     const submitForm = document.querySelector('.form-btn');
     if (submitForm) {
@@ -9,37 +14,45 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.querySelector('.form-email').value.trim();
             const phone = document.querySelector('.form-phone').value.trim();
 
-            // Валідація форми
+            let isValid = true;
+
+            // Валідація імені
             if (firstName.length < 2) {
-                alert("Ім'я занадто коротке");
-                return;
-            }
-            if (lastName.length < 2) {
-                alert("Прізвище занадто коротке");
-                return;
-            }
-            if (phone.length <= 9) {
-                alert("Номер телефону занадто короткий")
-                return
-            } 
-            if (phone.length >= 14) {
-                alert("Номер телефону занадто довгий")
-                return
-            }
-            if (!firstName || !lastName || !email || !phone) {
-                alert("Будь ласка, заповніть всі поля.");
-                return;
+                firstNameErrorMessage.style.display = 'block';
+                isValid = false;
+            } else {
+                firstNameErrorMessage.style.display = 'none';
             }
 
+            // Валідація прізвища
+            if (lastName.length < 2) {
+                lastNameErrorMessage.style.display = 'block';
+                isValid = false;
+            } else {
+                lastNameErrorMessage.style.display = 'none';
+            }
+
+            // Валідація email
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
-                alert("Будь ласка, введіть коректну електронну пошту.");
-                return;
+                emailErrorMessage.style.display = 'block';
+                isValid = false;
+            } else {
+                emailErrorMessage.style.display = 'none';
             }
 
-            const phonePattern = /^(?:\+(\d{1,3}))?[\s.-]?(?:\(?(\d{2,5})\)?[\s.-]?)?(\d{3,4})[\s.-]?(\d{3,4})$/;
-            if (!phonePattern.test(phone)) {
-                alert("Будь ласка, введіть коректний номер телефону. Наприклад: +1-800-555-5555 або 800-555-5555.");
+            // Валідація телефона
+            const phonePattern = /^\+380\d{9}$/;
+            if (!phonePattern.test(phone) ||
+                phone.length < 13 || phone.length > 13) {
+                    
+                phoneErrorMessage.style.display = 'block';
+                isValid = false;
+            } else {
+                phoneErrorMessage.style.display = 'none';
+            }
+
+            if (!isValid) {
                 return;
             }
 
@@ -64,7 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Дані форми:', formData);
 
         localStorage.removeItem('formData');
-    } 
+    }
 });
-
-
