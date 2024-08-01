@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/style.css"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/logo.svg" type="image/x-icon" />
+    <title>T-Space</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <div class="nav-block__arrow">
+                  <img
+                    src="./img/arrow.svg"
+                    alt="Go back"
+                  />
+                </div>
+                <span class="nav-block__count"> 4 </span>
+              </li>
+              <li class="nav-item">
+                <div class="nav-block__title">
+                  <a
+                    href=""
+                    class="nav-title"
+                    >T-Space</a
+                  >
+                  <div class="nav-block__img">
+                    <img
+                      src="./img/Group.svg"
+                      alt="Official logo"
+                      class="nav-title__img"
+                    />
+                  </div>
+                </div>
+                <p class="nav-title__text">бот</p>
+              </li>
+              <li class="nav-item">
+                <div class="nav-block__logo">
+                  <img
+                    src="./img/logo.svg"
+                    alt="Logo"
+                    class="nav-logo"
+                  />
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="messages">
+            <div class="message-block-time">
+              <p class="message-time-date">Сьогодні</p>
+            </div>
+            <ul class="message-list">
+              <li class="message-item fade-in visible">
+                <p class="message-text">
+                  Запускаємо курс з арбітражу трафіку! Отримайте цінні знання
+                  від експертів. Поглиблене вивчення сучасних стратегій.
+                </p>
+                <p class="message-time">11:45</p>
+                <img
+                  src="./img/teil.svg"
+                  alt="decoration"
+                  class="message-tail"
+                />
+              </li>
+              <li class="message-item fade-in visible">
+                <p class="message-text">
+                  Приєднуйтесь до нашого нового курсу! Інтерактивні заняття,
+                  практичні завдання, сертифікат. Відмінна можливість підвищити
+                  кваліфікацію.
+                </p>
+                <p class="message-time">11:45</p>
+                <img
+                  src="./img/teil.svg"
+                  alt="decoration"
+                  class="message-tail"
+                />
+              </li>
+              <li class="message-item fade-in visible">
+                <p class="message-text">
+                  Учасники отримають доступ до ексклюзивних матеріалів,
+                  консультацій та мережі контактів. Вивчайте нові тенденції
+                  арбітражу трафіку.
+                </p>
+                <p class="message-time">11:45</p>
+              </li>
+              <li class="message-item question fade-in visible">
+                <p class="message-text">Хочете дізнатись більше?</p>
+                <p class="message-time">11:45</p>
+                <img
+                  src="./img/teil.svg"
+                  alt="decoration"
+                  class="message-tail"
+                />
+              </li>
+            </ul>
+            <div class="message-answer">
+              <button class="message-answer__btn yes">Так</button>
+              <button class="message-answer__btn no">Ні</button>
+            </div>
+            <form class="form">
+              <input
+                type="text"
+                class="form-firstName"
+                placeholder="Ім'я"
+                required
+              />
+              <input
+                type="text"
+                class="form-lastName"
+                placeholder="Прізвище"
+                required
+              />
+              <input
+                type="email"
+                class="form-email"
+                placeholder="Пошта"
+                required
+              />
+              <input
+                type="tel"
+                class="form-phone"
+                placeholder="Телефон"
+                required
+              />
+              <button
+                class="form-btn"
+                type="submit"
+              >
+                Надіслати
+              </button>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="clip-box">
+              <button class="footer-btn__clip">
+                <img
+                  src="./img/clip.svg"
+                  alt="clip"
+                />
+              </button>
+            </div>
+            <form class="footer-form">
+              <input
+                type="text"
+                class="message-input"
+                placeholder="Повідомлення"
+                required
+              />
+              <div class="form-box__sticker">
+                <button class="footer-btn__stickers">
+                  <img
+                    src="./img/sticker.svg"
+                    alt="stickers"
+                  />
+                </button>
+              </div>
+            </form>
+            <div class="footer-box__microphone">
+              <button class="footer-btn__microphone">
+                <img
+                  src="./img/microphone.svg"
+                  alt="microphone"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/form.js"></script>
+  </body>
+</html>

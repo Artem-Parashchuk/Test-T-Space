@@ -1,0 +1,18 @@
+
+.messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.messages-title {
+    color: #fff;
+    font-size: 35px;
+    
+}
+.messages-text {
+    text-align: center;
+    line-height: 1.5;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 20px;
+}
