@@ -35,7 +35,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="./img/logo.svg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="./img/logo.svg"
+      type="image/x-icon"
+    />
     <title>T-Space</title>
   </head>
   <body>
@@ -90,7 +94,7 @@
               <p class="message-time-date">Сьогодні</p>
             </div>
             <ul class="message-list">
-              <li class="message-item fade-in ">
+              <li class="message-item fade-in">
                 <p class="message-text">
                   Запускаємо курс з арбітражу трафіку! Отримайте цінні знання
                   від експертів. Поглиблене вивчення сучасних стратегій.
@@ -102,7 +106,7 @@
                   class="message-tail"
                 />
               </li>
-              <li class="message-item fade-in ">
+              <li class="message-item fade-in">
                 <p class="message-text">
                   Приєднуйтесь до нашого нового курсу! Інтерактивні заняття,
                   практичні завдання, сертифікат. Відмінна можливість підвищити
@@ -115,15 +119,20 @@
                   class="message-tail"
                 />
               </li>
-              <li class="message-item fade-in ">
+              <li class="message-item fade-in">
                 <p class="message-text">
                   Учасники отримають доступ до ексклюзивних матеріалів,
                   консультацій та мережі контактів. Вивчайте нові тенденції
                   арбітражу трафіку.
                 </p>
                 <p class="message-time">11:45</p>
+                <img
+                  src="./img/teil.svg"
+                  alt="decoration"
+                  class="message-tail"
+                />
               </li>
-              <li class="message-item question fade-in ">
+              <li class="message-item question fade-in">
                 <p class="message-text">Хочете дізнатись більше?</p>
                 <p class="message-time">11:45</p>
                 <img
@@ -138,30 +147,42 @@
               <button class="message-answer__btn no">Ні</button>
             </div>
             <form class="form">
-              <input
-                type="text"
-                class="form-firstName"
-                placeholder="Ім'я"
-                required
-              />
-              <input
-                type="text"
-                class="form-lastName"
-                placeholder="Прізвище"
-                required
-              />
-              <input
-                type="email"
-                class="form-email"
-                placeholder="Пошта"
-                required
-              />
-              <input
-                type="tel"
-                class="form-phone"
-                placeholder="Телефон"
-                required
-              />
+              <div class="firstName-block">
+                <input
+                  type="text"
+                  class="form-firstName"
+                  placeholder="Ім'я"
+                  required
+                />
+                <p class="firstName-error">Ім'я занадто коротке</p>
+              </div>
+              <div class="lastName-block">
+                <input
+                  type="text"
+                  class="form-lastName"
+                  placeholder="Прізвище"
+                  required
+                />
+                <p class="lastName-error">Прізвище занадто коротке</p>
+              </div>
+              <div class="email-block">
+                <input
+                  type="email"
+                  class="form-email"
+                  placeholder="Email"
+                  required
+                />
+                <p class="email-error">Email не коректний</p>
+              </div>
+              <div class="phone-block">
+                <input
+                  type="tel"
+                  class="form-phone"
+                  placeholder="+380"
+                  required
+                />
+                <p class="phone-error">Не коректний номер телефона</p>
+              </div>
               <button
                 class="form-btn"
                 type="submit"
