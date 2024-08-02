@@ -5,20 +5,15 @@ function scrollToBottom() {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
-
-const messageAnswer = document.querySelector('div.message-answer');
+const messageAnswer = document.querySelector('.message-answer');
 const answerYes = document.querySelector('.yes');
 const answerNo = document.querySelector('.no');
 const questionMessageList = document.querySelector('.message-list');
-const formContainer = document.querySelector('.form');
+const formContainer = document.querySelector('.form-block');
 
-if (formContainer) {
-    formContainer.style.display = 'none';
-}
 
 document.addEventListener("DOMContentLoaded", function () {
     const messages = document.querySelectorAll('.message-item');
-    const btns = document.querySelector('.message-answer');
     let delay = 0;
 
     messages.forEach((message, index) => {
@@ -28,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollToBottom(); // Після відображення повідомлення
                 if (index === messages.length - 1) {
                     setTimeout(() => {
-                        if (btns) {
-                            btns.classList.add('visible');
+                        if (messageAnswer) {
+                            messageAnswer.classList.add('visible');
                             scrollToBottom(); // Після відображення кнопок
                         }
                     }, 600); // Затримка
@@ -52,7 +47,7 @@ function addAnswer(answerText) {
         setTimeout(() => {
             newAnswer.classList.add('visible');
             scrollToBottom(); // Прокрутка після додавання нової відповіді
-        }, 100);
+        }, 300);
     }
     if (messageAnswer) {
         messageAnswer.style.display = 'none';
@@ -94,7 +89,7 @@ function questionStep(question, answers, isFinalStep = false) {
         setTimeout(() => {
             newQuestion.classList.add('visible');
             scrollToBottom(); // Прокрутка після додавання нового питання
-        }, 100);
+        }, 500);
 
         setTimeout(() => {
             if (messageAnswer) {
@@ -119,13 +114,18 @@ function questionStep(question, answers, isFinalStep = false) {
                             <img src="./img/teil.svg" alt="decoration img" class="message-tail"/>
                         `;
                         questionMessageList.appendChild(finalMessage);
-                        if (formContainer) {
-                            formContainer.style.display = 'flex';
-                        }
+                   
                         setTimeout(() => {
                             finalMessage.classList.add('visible');
+                            formContainer.style.display = 'block';
                             scrollToBottom(); // Прокрутка після додавання фінального повідомлення
-                        }, 100);
+                        }, 700);
+                        setTimeout(() => {
+                            if (formContainer) {
+                                formContainer.classList.add('visible')
+                                scrollToBottom();
+                            }
+                        },1200)
                     }
                 };
 
@@ -198,7 +198,7 @@ function questionStep(question, answers, isFinalStep = false) {
                     }, { once: true });
                 }
             }
-        }, 100);
+        }, 700);
     }
 }
 
