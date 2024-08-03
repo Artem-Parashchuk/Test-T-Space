@@ -153,8 +153,8 @@ body {
   border-radius: 10px;
   padding: 6px 12px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
 }
 
 .message-item.visible {
@@ -191,8 +191,8 @@ body {
   margin-top: 10px;
   gap: 10px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-5px);
+  transition: opacity .4s ease, transform .4s ease;
 }
 
 .message-answer.visible {
@@ -211,11 +211,6 @@ body {
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s, opacity 1s ease, transform 1s ease;
-}
-.message-answer__btn.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .message-answer__btn:hover {
@@ -238,8 +233,8 @@ body {
   background-color: #d9e4ff;
   border-radius: 10px;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .answer-item.visible {
@@ -263,8 +258,8 @@ body {
   position: relative;
   display: none;
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .form-block.visible {
   opacity: 1;

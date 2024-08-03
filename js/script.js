@@ -1,3 +1,13 @@
+
+function startQuestionCount() {
+    let questionCount = 0;
+
+    return function () {
+        questionCount++;
+        countQuestion.innerHTML = questionCount;
+    }
+}
+const incrementQuestionCount = startQuestionCount()
 // Функція прокрутки донизу
 function scrollToBottom() {
     const chatContainer = document.getElementById('message-container');
@@ -5,11 +15,13 @@ function scrollToBottom() {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
+const countQuestion = document.querySelector('.nav-block__count')
 const messageAnswer = document.querySelector('.message-answer');
 const answerYes = document.querySelector('.yes');
 const answerNo = document.querySelector('.no');
 const questionMessageList = document.querySelector('.message-list');
 const formContainer = document.querySelector('.form-block');
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,9 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             messageAnswer.classList.add('visible');
                             scrollToBottom(); // Після відображення кнопок
                         }
-                    }, 600); // Затримка
+
+                    }, 600);
+
                 }
             }
+            incrementQuestionCount()
         }, delay);
         delay += 1000; // Затримка 1 секунда між повідомленнями
     });
@@ -50,7 +65,7 @@ function addAnswer(answerText) {
         }, 300);
     }
     if (messageAnswer) {
-        messageAnswer.style.display = 'none';
+        messageAnswer.classList.remove('visible')
     }
 }
 
@@ -62,13 +77,14 @@ if (answerYes) {
     answerYes.addEventListener('click', () => {
         addAnswer("Так");
         setTimeout(() => {
+
             questionStep(
                 "Чи був у вас досвід пов'язаний із Арбітражем трафіку?",
                 `<button class="message-answer__btn" id='answer-yes'>Так</button>
-                 <button class="message-answer__btn" id='answer-no'>Ні</button>
-                 <button class="message-answer__btn" id='answer-hear'>Чув про це</button>`
+                <button class="message-answer__btn" id='answer-no'>Ні</button>
+                <button class="message-answer__btn" id='answer-hear'>Чув про це</button>`
             );
-        }, 500);
+        }, 600);
     }, { once: true });
 }
 
@@ -89,10 +105,12 @@ function questionStep(question, answers, isFinalStep = false) {
         setTimeout(() => {
             newQuestion.classList.add('visible');
             scrollToBottom(); // Прокрутка після додавання нового питання
-        }, 500);
+            incrementQuestionCount()
+        }, 600);
 
         setTimeout(() => {
             if (messageAnswer) {
+                messageAnswer.classList.add('visible') /////////////
                 messageAnswer.innerHTML = answers;
                 messageAnswer.style.display = 'flex';
 
@@ -114,7 +132,8 @@ function questionStep(question, answers, isFinalStep = false) {
                             <img src="./img/teil.svg" alt="decoration img" class="message-tail"/>
                         `;
                         questionMessageList.appendChild(finalMessage);
-                   
+                        messageAnswer.style.display = 'none';
+
                         setTimeout(() => {
                             finalMessage.classList.add('visible');
                             formContainer.style.display = 'block';
@@ -125,7 +144,7 @@ function questionStep(question, answers, isFinalStep = false) {
                                 formContainer.classList.add('visible')
                                 scrollToBottom();
                             }
-                        },1200)
+                        }, 1200)
                     }
                 };
 
@@ -142,6 +161,7 @@ function questionStep(question, answers, isFinalStep = false) {
                                     true
                                 );
                             }, 500);
+
                         }
                     }, { once: true });
                 }
