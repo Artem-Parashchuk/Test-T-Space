@@ -65,3 +65,5 @@
 Текст “Дякую! Наш менеджер обов'язково зв'яжеться з вами найближчим часом!”
 
 ![Знімок екрана 2024-07-30 191154](https://github.com/user-attachments/assets/c7ad105c-d387-4d72-b1ba-048244fe5934)
+![scrin-2](https://github.com/user-attachments/assets/9a94750c-db05-43b6-b60c-10f2976421e4)
+
